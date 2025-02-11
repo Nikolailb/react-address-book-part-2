@@ -9,7 +9,7 @@ function ContactList() {
   const { contacts } = useContext(ContactsContext);
   return (
     <MainContent title="Contacts">
-      <ul className="common-list">
+      <ul className="common-list" id="contacts-list">
         {contacts.map((el) => {
           return (
             <li key={el.id}>

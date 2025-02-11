@@ -32,9 +32,14 @@ function ContactDetails() {
     <MainContent title={`${contact.firstName} ${contact.lastName}`}>
       <p>Gender: {`${contact.gender}`}</p>
       <p>Job Title: {`${contact.jobTitle}`}</p>
-      <p>Address: {`${contact.street} ${contact.city}`}</p>
+      <p>Address: {`${contact.street}, ${contact.city}`}</p>
       <div className="buttons">
-        <button className="fancy" onClick={handleDelete}>
+        <button
+          className="fancy"
+          onClick={() => {
+            navigate(`/contact/${id}/edit`);
+          }}
+        >
           Edit Contact
         </button>
         <button className="delete fancy" onClick={handleDelete}>

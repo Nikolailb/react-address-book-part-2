@@ -23,7 +23,10 @@
     gap: 6px;
 }
 
-
+#contacts-list {
+    max-height: 90vh;
+    overflow-y: auto;
+}
 
 .main-content {
     flex: 1;
@@ -34,21 +37,36 @@ button.delete {
     color: red;
 }
 
-button.fancy {
+.fancy {
     background-color: aliceblue;
     padding: 10px;
     border-radius: 25px;
 }
 
-button.fancy:hover {
-    background-color: aquamarine;
+.fancy:hover {
+    background-color: rgb(191, 196, 201);
 }
 
-button.fancy:active {
-    background-color: aqua;
+.fancy:active {
+    background-color: rgb(147, 152, 156);
 }
 
 .buttons {
     display: flex;
     gap: 4px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 20px;
+    align-items: center;
+}
+
+input {
+    padding: 4px;
+    max-width: 400px;
+    border-radius: 5px;
+    border: 1px solid #a7a7a7; /* Subtle border */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }

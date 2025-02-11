@@ -5,6 +5,8 @@ import Menu from "./components/Menu";
 import ContactList from "./components/main/ContactList";
 import { Link, Route, Routes } from "react-router-dom";
 import ContactDetails from "./components/main/ContactDetails";
+import EditContact from "./components/main/EditContact";
+import CreateContact from "./components/main/CreateContact";
 
 const ContactsContext = createContext();
 const ContentContext = createContext();
@@ -45,13 +47,16 @@ function App() {
       <div className="container">
         <Menu>
           <Link to="/">Contacts List</Link>
+          <Link to="/contact/create">Create Contact</Link>
           <Link to="/" onClick={regenerateList}>
             Regenerate List (DESTRUCTIVE)
           </Link>
         </Menu>
         <Routes>
           <Route path="/" element={<ContactList />} />
+          <Route path="/contact/create" element={<CreateContact />} />
           <Route path="/contact/:id" element={<ContactDetails />} />
+          <Route path="/contact/:id/edit" element={<EditContact />} />
         </Routes>
       </div>
     </ContactsContext.Provider>
