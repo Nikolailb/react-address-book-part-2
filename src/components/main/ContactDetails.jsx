@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
 import { ContactsContext, ApiBase } from "../../App";
 import MainContent from "./MainContent";
@@ -33,6 +35,21 @@ function ContactDetails() {
       <p>Gender: {`${contact.gender}`}</p>
       <p>Job Title: {`${contact.jobTitle}`}</p>
       <p>Address: {`${contact.street}, ${contact.city}`}</p>
+      {contact.latitude && contact.longitude && (
+        <MapContainer
+          center={[contact.latitude, contact.longitude]}
+          zoom={10}
+          style={{ height: "400px", width: "100%" }}
+        >
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          />
+          <Marker position={[contact.latitude, contact.longitude]}>
+            <Popup>{`${contact.firstName} ${contact.lastName}`}</Popup>
+          </Marker>
+        </MapContainer>
+      )}
       <div className="buttons">
         <button
           className="fancy"

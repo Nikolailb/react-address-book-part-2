@@ -70,3 +70,6 @@ input {
     border: 1px solid #a7a7a7; /* Subtle border */
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
+.details-link {
+    padding-right: 1.5rem;
+}
