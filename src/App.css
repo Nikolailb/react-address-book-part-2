@@ -1,0 +1,54 @@
+.common-list {
+    list-style: none;
+}
+
+.common-list > li {
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.menu {
+    flex: 0 0 200px; /* Fixed width for the menu */
+    border-right: 1px solid gray;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+button.delete {
+    color: red;
+}
+
+button.fancy {
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+button.fancy:hover {
+    background-color: aquamarine;
+}
+
+button.fancy:active {
+    background-color: aqua;
+}
+
+.buttons {
+    display: flex;
+    gap: 4px;
+}
